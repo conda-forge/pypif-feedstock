@@ -1,5 +1,5 @@
 {% set name = "pypif" %}
-{% set version = "2.1.1" %}
+{% set version = "2.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f4bea4989a66f776b046180889a71f19f84e4b3fc93102d3a3f2f859d9866531
+  sha256: f426a4f58157b44727a2fdbe821000d98b5a64951b9ebe8a300d38db7804eefd
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -20,19 +20,19 @@ requirements:
     - pip
   run:
     - python
-    - numpy 
+    - numpy
     - six
 
 test:
   imports:
-    - pypif    
+    - pypif
 
 about:
   home: http://github.com/CitrineInformatics/pypif
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Python toolkit for working with PIFs'
+  summary: Python toolkit for working with PIFs
 
   description: |
     Python toolkit for working with PIFs
